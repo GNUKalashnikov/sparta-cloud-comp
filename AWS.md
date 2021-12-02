@@ -13,9 +13,14 @@
 	- Require a public ip for the EC2 Instance
 	- transfer the app via securecp or rsync
 	- install dependencies
+		- npm
 
 ### Using Rsync
 ```bash
 rsync -avzh -e "ssh -i eng99.pem" ~/Documents/starter-code/app/ ubuntu@ec2-34-245-24-17.eu-west  
 -1.compute.amazonaws.com:/home/ubuntu/app
 ```
+## Day 2
+- Adjust security in AWS
+	- Change port to open 3000
+	- Confirm by running npm in the app
