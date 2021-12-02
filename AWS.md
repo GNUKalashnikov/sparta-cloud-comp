@@ -23,4 +23,16 @@ rsync -avzh -e "ssh -i eng99.pem" ~/Documents/starter-code/app/ ubuntu@ec2-34-24
 ## Day 2
 - Adjust security in AWS
 	- Change port to open 3000
-	- Confirm by running npm in the app
+	- Confirm by running npm in the app	
+- EC2-Second Instance
+	- *Use the provision scripts for the DB else it wont work*
+	- allow the port 27017 
+	- transfer the code from yesterdays vagrant section
+	- Allow ssh port
+	- security:eng99_ivan_db
+		- **MAKE SURE TO INCLUDE THE APP IP IN THE DB SECURITY SETTINGS**
+	- ip changes every start and stop of the instance
+	- allow mongodb - from 0000
+		- restart mongo
+	- back to original EC2 and enable on app
+		- export DB_HOST="mongodb://192.168.10.150:27017/posts
