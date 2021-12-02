@@ -36,3 +36,50 @@ rsync -avzh -e "ssh -i eng99.pem" ~/Documents/starter-code/app/ ubuntu@ec2-34-24
 		- restart mongo
 	- back to original EC2 and enable on app
 		- export DB_HOST="mongodb://192.168.10.150:27017/posts
+
+## Key notes
+Make sure that tje export DB_HOST is pointing to the Database and not to itself 
+
+
+#### AMI
+
+1. Instance page
+2. Select the instance
+3. actions -> create image
+4. Image name, description and tag as the same formate of eng99_*name*_ami_thing
+5. *Launch* and configure it as needed
+
+#### Alarm
+
+1. Instance page
+2. select the instance
+3. actions -> "Monitor and troubleshoot"
+4. Manage Cloudwatch Alarms
+
+1. Edit or create an alarm
+2. **Alarm Notification** -> create a name such as eng_*name*_alarm to easily track it in SNS
+3. Set the parameters
+4. Create
+--- 
+#### SNS
+
+1. Search *SNS*
+2. Go to topics
+3. *Publish message*
+	1. Fill in the subject, the "Raw Message" being the message sent and ant attributes if necessary
+
+This has essentially est a message that can now be configured to be sent to either email or number
+
+##### Message
+1. Subscription
+2. chose the topic (the one you made all the way back in the alarm
+3. Choose a protocol and create subscription
+
+
+
+## Availability and Scalable
+Availability
+- SNS, alarms, cloud watch 
+Scalable
+- AMI, EC2, 
+
