@@ -78,6 +78,13 @@ This has essentially est a message that can now be configured to be sent to eith
 
 
 ## Availability and Scalable
+
+#### Availability
+What this word means in reference to application design and maintainability is to be able to stay active and online at all times.
+Utilising services to counter performance blocks and proactively implementing measures to negate potential downtime.
+
+#### Scalable
+Scaleable for web applications specifically infers on the back-end ability for  adaptation, the ability to promptly enlarge or shrink to adequately address user demand via services is scalability.
 Availability
 - SNS, alarms, cloud watch 
 Scalable
